@@ -1,6 +1,7 @@
 import express from "express";
 
 import SaeApiRouter from "./sae.api.js";
+import MessageApiRouter from "./message.api.js";
 import ArticleApiRouter from "./article.api.js";
 import AuthorApiRouter from "./author.api.js";
 import ArticleCommentApiRouter from "./comment-article.api.js";
@@ -8,6 +9,7 @@ import ArticleCommentApiRouter from "./comment-article.api.js";
 const router = express.Router();
 
 router.use(SaeApiRouter);
+router.use(MessageApiRouter);
 router.use(ArticleApiRouter);
 router.use(AuthorApiRouter);
 router.use(ArticleCommentApiRouter);
