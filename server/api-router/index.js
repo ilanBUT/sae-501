@@ -6,7 +6,6 @@ import ArticleApiRouter from "./article.api.js";
 import AuthorApiRouter from "./author.api.js";
 import ArticleCommentApiRouter from "./comment-article.api.js";
 
-
 const router = express.Router();
 
 router.use(SaeApiRouter);
