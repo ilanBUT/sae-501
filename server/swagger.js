@@ -17,7 +17,7 @@ const envVars = dotenv.config({ path: envFilePath });
 const port = envVars?.parsed?.PORT || 3900;
 
 const options = {
-    apis: [path.join(path.resolve(), "server/api-router/*.js")],
+    apis: ["./server/api-router/*.js"],
     swaggerDefinition: {
         openapi: "3.0.3",
         produces: ["application/json"],
