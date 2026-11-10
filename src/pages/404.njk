@@ -1,0 +1,114 @@
+{% extends "layouts/front-end/base.njk" %}
+
+{% block title %}Page introuvable{% endblock %}
+
+{% block hero %}{% endblock %}
+
+{% block styles %}
+<style>
+    .bulle-404 {
+        position: relative;
+        left: 10%;
+        height: clamp(320px, calc(100vh - 300px), 480px);
+        display: flex;
+        align-items: center;
+    }
+
+    .bulle-404 .bulle-icone {
+        right: 22%;
+        top: -60px;
+        transform: scale(0.8);
+    }
+
+    .bulle-404 .bulle-icone-bordure {
+        right: 21%;
+        top: -70px;
+        transform: scale(0.8);
+    }
+
+    .bulle-404:hover .bulle-icone,
+    .bulle-404:hover .bulle-icone-bordure {
+        transform: scale(0.85);
+    }
+
+    .bulle-404 .mot {
+        display: inline-block;
+        background: #fff;
+        padding: 0.05em 0.2em;
+        margin-left: 0.05em;
+    }
+
+    @media (max-width: 767px) {
+        .bulle-404 {
+            left: 0;
+            height: auto;
+            min-height: 340px;
+        }
+
+        .bulle-404 .bulle-icone {
+            right: -120px;
+            top: 0;
+            transform: scale(0.5);
+        }
+
+        .bulle-404 .bulle-icone-bordure {
+            right: -135px;
+            top: -10px;
+            transform: scale(0.5);
+        }
+
+        .bulle-404:hover .bulle-icone,
+        .bulle-404:hover .bulle-icone-bordure {
+            transform: scale(0.55);
+        }
+    }
+</style>
+{% endblock %}
+
+{% block main %}
+
+<section class="mx-auto max-w-[1200px] overflow-hidden px-4 pb-4" style="padding-top: 3.5rem;">
+
+    <header class="bulle bulle-404">
+
+        <div class="titre relative z-10 w-full text-right sm:w-[52%]">
+
+            <h1 class="font-serif font-bold leading-[1.3] text-[#0f172a]">
+
+                <span class="block text-5xl sm:text-6xl lg:text-7xl">
+                    <span class="mot text-red-600">Erreur</span>
+                    <span class="mot text-red-600">404</span>
+                </span>
+
+                <span class="mt-2 block text-3xl sm:text-4xl lg:text-5xl">
+                    <span class="mot">Oups&nbsp;!</span>
+                    <span class="mot">Cette</span>
+                    <span class="mot">page</span>
+                </span>
+
+                <span class="mt-2 block text-3xl sm:text-4xl lg:text-5xl">
+                    <span class="mot">est</span>
+                    <span class="mot">introuvable</span>
+                </span>
+
+            </h1>
+
+            <div class="mt-6">
+                <a
+                    href="/"
+                    class="inline-flex items-center justify-center rounded-lg bg-red-600 px-8 py-3 font-semibold text-white transition-colors hover:bg-red-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-600"
+                >
+                    Retour à l'accueil
+                </a>
+            </div>
+
+        </div>
+
+        <div class="bulle-icone {{ bubble_color }}" aria-hidden="true"></div>
+        <div class="bulle-icone-bordure {{ bubble_color }}" aria-hidden="true"></div>
+
+    </header>
+
+</section>
+
+{% endblock %}

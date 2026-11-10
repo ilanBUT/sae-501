@@ -171,6 +171,7 @@ app.use(responseTimeMiddleware, function (req, res, next) {
 
         if (process.env.NODE_ENV === "development" && getNameForRoute(app, req.baseUrl + req.route?.path).NAME !== "eslint") {
             const { getReport: getEslintReport } = await import("./utils/eslint.middleware.js");
+
             req.app.locals.eslint_report = await getEslintReport("short");
         }
 
@@ -283,6 +284,10 @@ if (process.env.NODE_ENV === "development") {
         console.error(error);
     });
 }
+
+app.use((req, res) => {
+    res.status(404).render("pages/404.njk");
+});
 
 app.use(async (err, req, res, _next) => {
     res.status(500);
