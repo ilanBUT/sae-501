@@ -1,4 +1,3 @@
-
 {% set bubble_color = "rouge" %}
 
 <!DOCTYPE html>
@@ -39,11 +38,15 @@
             <script type="module" src="/{{ manifest['src/scripts/main.frontend.js'].file }}" defer></script>
         {% endif %}
     </head>
+
     <body class="mr-[max(env(safe-area-inset-right),_theme(space.4))] ml-[max(env(safe-area-inset-left),_theme(space.4))]">
         {% include "components/profiler.njk" %}
 
         {% include "components/front-end/navigation.njk" %}
-        {% include "components/front-end/hero.njk" %}
+
+        {% block hero %}
+            {% include "components/front-end/hero.njk" %}
+        {% endblock %}
 
         <main class="max-w-[1200px] mx-auto @container/main">
             {% block main %}{% endblock %}
