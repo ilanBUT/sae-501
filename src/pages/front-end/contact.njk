@@ -1,0 +1,103 @@
+
+{% extends "layouts/front-end/base.njk" %}
+
+{% block title %}Contact{% endblock %}
+
+{% block main %}
+    <section class="mx-auto max-w-3xl px-4 pt-12 pb-12 sm:pt-16">
+        <h1 class="mb-4 text-3xl font-bold text-[#005A47]">
+            Contactez-nous
+        </h1>
+
+        <p class="mb-8 text-lg">
+            Vous avez une question sur le BUT Métiers du Multimédia et de l'Internet ?
+            Remplissez ce formulaire pour nous envoyer votre message.
+        </p>
+
+        <form id="contact-form" class="space-y-6">
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div>
+                    <label for="firstname" class="mb-2 block font-semibold">
+                        Prénom *
+                    </label>
+                    <input
+                        type="text"
+                        id="firstname"
+                        name="firstname"
+                        autocomplete="given-name"
+                        required
+                        class="w-full rounded-lg border border-gray-400 px-4 py-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#005A47]"
+                    >
+                </div>
+
+                <div>
+                    <label for="lastname" class="mb-2 block font-semibold">
+                        Nom *
+                    </label>
+                    <input
+                        type="text"
+                        id="lastname"
+                        name="lastname"
+                        autocomplete="family-name"
+                        required
+                        class="w-full rounded-lg border border-gray-400 px-4 py-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#005A47]"
+                    >
+                </div>
+            </div>
+
+            <div>
+                <label for="email" class="mb-2 block font-semibold">
+                    Adresse e-mail *
+                </label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autocomplete="email"
+                    required
+                    class="w-full rounded-lg border border-gray-400 px-4 py-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#005A47]"
+                >
+            </div>
+
+            <div>
+                <label for="identity" class="mb-2 block font-semibold">
+                    Vous êtes
+                </label>
+                <select
+                    id="identity"
+                    name="identity"
+                    class="w-full rounded-lg border border-gray-400 bg-white px-4 py-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#005A47]"
+                >
+                    <option value="none">Non précisé</option>
+                    <option value="student">Étudiant(e)</option>
+                    <option value="parent">Parent</option>
+                    <option value="other">Autre</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="message" class="mb-2 block font-semibold">
+                    Votre message *
+                </label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    required
+                    class="w-full rounded-lg border border-gray-400 px-4 py-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#005A47]"
+                ></textarea>
+            </div>
+
+            <p class="text-sm">* Champs obligatoires</p>
+
+            <div id="contact-feedback" role="status" aria-live="polite"></div>
+
+            <button
+                type="submit"
+                class="w-full rounded-lg bg-[#005A47] px-6 py-3 font-semibold text-white hocus:bg-[#003D30] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#005A47]"
+            >
+                Envoyer le message
+            </button>
+        </form>
+    </section>
+{% endblock %}
